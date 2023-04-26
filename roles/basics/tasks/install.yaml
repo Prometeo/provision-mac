@@ -1,0 +1,26 @@
+---
+
+- name: Add fonts cask
+  command: brew tap homebrew/cask-fonts
+
+
+- name: Install font FiraCode
+  command: brew install font-fira-code
+
+- name: Install font Hack
+  command: brew install font-hack
+
+- name: Install fira code nerd font
+  command: brew install font-fira-code-nerd-font
+
+- homebrew:
+    name: stow
+    state: present
+
+- homebrew:
+    name: htop
+    state: present
+
+- homebrew:
+    name: ripgrep
+    state: present

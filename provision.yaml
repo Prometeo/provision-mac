@@ -1,0 +1,15 @@
+- hosts: all
+  vars:
+    home_path: /Users/prometeo
+    local_user: prometeo
+    fonts_dir: /home/prometeo/.local/share/fonts/
+    sshkey: "{{ home_path }}/.ssh/id_rsa"
+
+  become: false
+  roles:
+    - role: basics
+    - role: programming-languages
+    - role: docker
+    - role: terminal
+    - role: editors
+    - role: dotfiles

@@ -1,0 +1,48 @@
+---
+
+- homebrew:
+    name: python
+    state: present
+  tags:
+    - python
+
+- homebrew:
+    name: pyenv
+    state: present
+  tags:
+    - python
+
+- name: Verify if pyenv-virtualenv is already downloaded
+  stat:
+    path: "{{ home_path }}/.pyenv/plugins/pyenv-virtualenv"
+  register: pyenv_virtualenv
+  tags:
+    - python
+
+- homebrew:
+    name: pyenv-virtualenv
+    state: present
+  tags:
+    - python
+
+- name: Check if cargo is installed
+  shell: command -v cargo
+  register: cargo_exists
+  ignore_errors: true
+  tags:
+    - rust
+
+- name: Fetch rustup
+  ansible.builtin.uri:
+    url: https://sh.rustup.rs
+    return_content: yes
+  register: rustup_installer
+  tags:
+    - rust
+
+- name: Run rustup installer
+  ansible.builtin.shell:
+    cmd: sh -s -- -y
+    stdin: "{{ rustup_installer.content }}"
+  tags:
+    - rust

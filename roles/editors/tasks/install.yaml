@@ -1,0 +1,9 @@
+---
+
+- name: Add emacs-plus cask
+  ansible.builtin.command: brew tap d12frosted/emacs-plus
+
+
+- homebrew:
+    name: emacs-plus
+    state: present

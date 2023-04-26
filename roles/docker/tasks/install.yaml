@@ -1,0 +1,4 @@
+---
+
+- name: Install rosetta
+  command: softwareupdate --install-rosetta --agree-to-license
