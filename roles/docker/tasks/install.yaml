@@ -2,3 +2,8 @@
 
 - name: Install rosetta
   command: softwareupdate --install-rosetta --agree-to-license
+
+- name: Install docker
+  homebrew_cask:
+    name: docker
+    state: present

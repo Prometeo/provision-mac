@@ -1,12 +1,6 @@
 ---
 
 - homebrew:
-    name: python
-    state: present
-  tags:
-    - python
-
-- homebrew:
     name: pyenv
     state: present
   tags:
@@ -18,14 +12,6 @@
   register: pyenv_virtualenv
   tags:
     - python
-
-# - name: Install pyenv-virtualenv plugin
-#   when: not pyenv_virtualenv.stat.exists
-#   git:
-#     repo: https://github.com/pyenv/pyenv-virtualenv.git
-#     dest: "{{ home_path }}/.pyenv/plugins/pyenv-virtualenv"
-#   tags:
-#     - python
 
 - homebrew:
     name: pyenv-virtualenv
