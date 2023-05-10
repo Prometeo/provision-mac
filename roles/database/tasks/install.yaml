@@ -1,0 +1,11 @@
+---
+
+- name: Install pgadmin
+  homebrew_cask:
+    name: pgadmin4
+    state: present
+
+- name: Install sqlit-browser
+  homebrew_cask:
+    name: db-browser-for-sqlite
+    state: present

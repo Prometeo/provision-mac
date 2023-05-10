@@ -13,3 +13,4 @@
     - role: terminal
     - role: editors
     - role: dotfiles
+    - role: database
