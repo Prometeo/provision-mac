@@ -9,6 +9,6 @@
 
 ## Execute the script to provision the mac device
 To execute the script to provision your mac device you just need to execute the command:
-```sh
+```console
 make provision
 ```
