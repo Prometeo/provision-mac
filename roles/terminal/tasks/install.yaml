@@ -4,19 +4,6 @@
     name: zsh
     state: present
 
-- name: Verify if oh-my-zs is already installed
-  stat:
-    path: "{{ home_path }}/.oh-my-zsh"
-  register: oh_my_zsh_config
-
-- name: Install oh-my-zsh
-  when: not oh_my_zsh_config.stat.exists
-  shell: "curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh -s"
-
-- homebrew:
-    name: antibody
-    state: present
-
 - homebrew:
     name: starship
     state: present
@@ -33,12 +20,6 @@
   command: ./install.sh
   args:
     chdir: "{{ home_path }}/.scm_breeze"
-
-- name: Download antigen
-  become: false
-  get_url:
-    url: https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh
-    dest: "{{ home_path }}/.antigen.zsh"
 
 - name: Remove default zshrc file
   file:
