@@ -24,3 +24,7 @@
 - homebrew:
     name: ripgrep
     state: present
+
+- homebrew:
+    name: navi
+    state: present
