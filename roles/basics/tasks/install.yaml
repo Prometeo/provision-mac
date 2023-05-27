@@ -26,5 +26,9 @@
     state: present
 
 - homebrew:
+    name: tldr
+    state: present
+
+- homebrew:
     name: navi
     state: present
