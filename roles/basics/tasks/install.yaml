@@ -20,6 +20,10 @@
     state: present
 
 - homebrew:
+    name: font-iosevka
+    state: present
+
+- homebrew:
     name: stow
     state: present
 
